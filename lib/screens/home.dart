@@ -48,6 +48,15 @@ class _HomeState extends State<Home> {
         slivers: [
           SliverToBoxAdapter(
             child: ContentHeader(featureContent: sintelContent),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.only(top: 20),
+            sliver: SliverToBoxAdapter(
+              child: Previews(
+                title: 'Previews',
+                contentList: previews,
+              ),
+            ),
           )
         ],
       ),
