@@ -4,6 +4,7 @@ import 'package:flutter_netflix_responsive_ui/widgets/widgets.dart';
 import '../data/data.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key key}) : super(key: key);
   @override
   _HomeState createState() => _HomeState();
 }
@@ -53,6 +54,7 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.only(top: 20),
             sliver: SliverToBoxAdapter(
               child: Previews(
+                key: PageStorageKey('previews'),
                 title: 'Previews',
                 contentList: previews,
               ),
@@ -60,12 +62,14 @@ class _HomeState extends State<Home> {
           ),
           SliverToBoxAdapter(
             child: ContentList(
+              key: PageStorageKey('myList'),
               title: 'My List',
               contentList: myList,
             ),
           ),
           SliverToBoxAdapter(
             child: ContentList(
+              key: PageStorageKey('originals'),
               title: 'Netflix Originals',
               contentList: originals,
               isOriginals: true,
@@ -75,6 +79,7 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.only(bottom: 21),
             sliver: SliverToBoxAdapter(
               child: ContentList(
+                key: PageStorageKey('trending'),
                 title: 'Trending',
                 contentList: trending,
               ),
