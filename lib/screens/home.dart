@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_netflix_responsive_ui/widgets/widgets.dart';
 
+import '../data/data.dart';
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -31,6 +33,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.cast),
@@ -44,7 +47,7 @@ class _HomeState extends State<Home> {
         controller: _scrollController,
         slivers: [
           SliverToBoxAdapter(
-            child: Container(height: 1000, color: Colors.blue),
+            child: ContentHeader(featureContent: sintelContent),
           )
         ],
       ),
