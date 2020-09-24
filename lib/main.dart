@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: Colors.black
       ),
-      home: Home(),
+      home: NavScreen()
     );
   }
 }
